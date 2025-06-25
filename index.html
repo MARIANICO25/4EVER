@@ -228,34 +228,7 @@
     </div>
     
    
-            if (!isAttending) {
-                submitBtn.disabled = false;
-                return;
-            }
-            
-            if (!contributionField.value || parseInt(contributionField.value) < minContribution) {
-                submitBtn.disabled = true;
-            } else {
-                submitBtn.disabled = false;
-            }
-        }
-        
-        // Mettre à jour l'affichage en fonction de la présence
-        function updateAttendanceStatus(attending) {
-            isAttending = attending;
-            
-            if (attending) {
-                document.getElementById('attendingFields').style.display = 'block';
-                document.getElementById('notAttendingFields').style.display = 'none';
-            } else {
-                document.getElementById('attendingFields').style.display = 'none';
-                document.getElementById('notAttendingFields').style.display = 'block';
-                document.getElementById('submitBtn').disabled = false;
-            }
-            
-            checkContribution();
-        }
-        
+           
         // Ajouter des écouteurs d'événements
         document.addEventListener('DOMContentLoaded', function() {
             const contributionField = document.getElementById('contribution');
